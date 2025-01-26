@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-6 offset-md-3">
+    {% if user.is_authenticated %}
+    <h1>Hola todos.. {{ user }}</h1>
+    {% else %}
+    <h1>INGRESO</h1>
+    <br/>
+    {% include 'ingresov2.html' %}
+    {% endif %}
+</div>
+{% endblock %}
