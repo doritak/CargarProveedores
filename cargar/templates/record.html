@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div class="card">
+  <div class="card-header"><strong>{{ proveedor_record.nombre_proveedor }}</strong>
+  </div>
+
+<div class="card-body">
+<p class="card-text">
+<strong>RUT: </strong>{{ proveedor_record.rut }}</p>
+
+<p class="card-text">
+<strong>Vencimiento: </strong>{{ proveedor_record.vencimiento  }}
+</p>
+
+<p class="card-text">
+<strong>Nombre vendedor: </strong>{{ proveedor_record.vencimiento }}</p>
+
+<p class="card-text">
+<strong>Nombre Corto: </strong>{{ proveedor_record.nombre_corto }}</p>
+
+<p class="card-text">
+<strong>Nombre Vendedor: </strong>{{ proveedor_record.nombre_vendedor }}</p>
+
+<p class="card-text">
+<strong>Teléfono Vendedor: </strong>{{ proveedor_record.telefono_vendedor }}</p>
+
+<p class="card-text">
+<strong>Correo Vendedor: </strong>{{ proveedor_record.correo_vendedor }}</p>
+
+<p class="card-text">
+<strong>Correo Vendedor2: </strong>{{ proveedor_record.correo_vendedor2 }}</p>
+
+<p class="card-text">
+<strong>Correo Pago: </strong>{{ proveedor_record.correo_pago }}</p>
+
+<p class="card-text">
+<strong>Tipo de Flete: </strong>{{ proveedor_record.tipo_flete }}</p>
+
+<p class="card-text">
+<strong>Transporte: </strong>{{ proveedor_record.transporte }}</p>
+
+<p class="card-text">
+<strong>Transporte: </strong>{{ proveedor_record.transporte }}</p>
+
+<p class="card-text">
+<strong>Creado el: </strong>{{ proveedor_record.created_at }}</p>
+
+
+<p class="card-text">
+<strong>ID: </strong>{{ proveedor_record.id }}</p>
+
+  </div>
+</div>
+
+<br/><br/>
+<a href="{% url 'home' %}" class="btn btn-secondary">Regresar</a>
+
+{% endblock %}

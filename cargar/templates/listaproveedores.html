@@ -1,0 +1,33 @@
+<h1 class="text-center">Lista de Proveedores </h1>
+<div>
+    <table class="table table-hover table-striped table-bordered table-sm">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">Proveedor</th>
+            <th scope="col">RUT</th>
+            <th scope="col">Vence</th>
+            <th scope="col">Nombre vendedor</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Mail Vendedor</th>
+            <th scope="col">Flete</th>
+            <th scope="col">Transporte</th>
+            <th scope="col">Id</th>
+        </tr>
+        </thead>
+        <tbody class="table-group-divider">
+        {% for proveedor in proveedores %}
+        <tr>
+            <td>{{ proveedor.nombre_corto }}</td>
+            <td>{{ proveedor.rut }}</td>
+            <td>{{ proveedor.vencimiento }}</td>
+            <td>{{ proveedor.nombre_vendedor }}</td>
+            <td>{{ proveedor.telefono_vendedor }}</td>
+            <td>{{ proveedor.correo_vendedor }}</td>
+            <td>{{ proveedor.tipo_flete }}</td>
+            <td>{{ proveedor.transporte }}</td>
+            <td><a href="{% url 'proveedor' proveedor.id %}">{{ proveedor.id }}</a></td>
+        </tr>
+        {% endfor%}
+        </tbody>
+    </table>
+</div>

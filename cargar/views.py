@@ -2,9 +2,12 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignUpForm
+from .models import Proveedor
 
 # Create your views here.
 def home(request):
+    proveedores = Proveedor.objects.all()
+
     # validar si el usuario está loggeado (login)
     if request.method == 'POST':
         username = request.POST['username']
@@ -19,7 +22,7 @@ def home(request):
             messages.success(request, "Hay un error en el ingreso.. ")
             return redirect('home')
 
-    return render(request, 'home.html', {})
+    return render(request, 'home.html', {'proveedores':proveedores})
 
 # def login_user(request):
 #     pass
@@ -45,3 +48,11 @@ def register_user(request):
         form = SignUpForm()
         return render(request, 'register.html', {'form':form})
     return render(request, 'register.html', {'form': form})
+
+def proveedor_record(request, pk):
+    if request.user.is_authenticated:
+        proveedor_record = Proveedor.objects.get(id=pk)
+        return render(request, 'record.html', {'proveedor_record': proveedor_record})
+    else:
+        messages.success(request, "Tiene que acceder primero con Login...")
+        return redirect('home')
