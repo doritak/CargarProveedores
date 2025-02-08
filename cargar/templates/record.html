@@ -56,6 +56,18 @@
 </div>
 
 <br/><br/>
-<a href="{% url 'home' %}" class="btn btn-secondary">Regresar</a>
+<ul class="list-unstyled d-flex gap-2">
+  <li>
+    <a href="{% url 'proveedores' %}" class="btn btn-secondary">Regresar</a>
+  </li>
+  <li>
+    <a href="{% url 'delete_proveedor' proveedor_record.id %}" class="btn btn-danger">Eliminar</a>
+  </li>
+   <li>
+    <a href="{% url 'index' %}" class="btn btn-secondary">Inicio</a>
+  </li>
+</ul>
+
+
 
 {% endblock %}

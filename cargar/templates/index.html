@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<div class="container d-flex flex-column justify-content-center align-items-center ">
+    <h1 class="mb-4 text-center fw-bold">SELECCIONA DEL MENÚ</h1>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4 text-center">
+
+        <!-- Primer enlace -->
+        <div class="col">
+            <a href="{% url 'proveedores' %}" class="text-decoration-none">
+                <div class="card shadow-sm h-100 border-0 bg-light transition shadow-sm hover-shadow">
+                    <div class="card-body py-4">
+                        <h3 class="fw-bold">Proveedores</h3>
+                        <p>Gestión de Proveedores</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Segundo enlace -->
+        <div class="col">
+            <a href="{% url 'proveedores' %}" class="text-decoration-none">
+                <div class="card shadow-sm h-100 border-0 bg-light transition shadow-sm hover-shadow">
+                    <div class="card-body py-4">
+                        <h3 class="fw-bold">Cargar Stock</h3>
+                        <p>Se carga el stock actual para análisis.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Tercer enlace -->
+        <div class="col">
+            <a href="{% url 'proveedores' %}" class="text-decoration-none">
+                <div class="card shadow-sm h-100 border-0 bg-light transition shadow-sm hover-shadow">
+                    <div class="card-body py-4">
+                        <h3 class="fw-bold">Compras</h3>
+                        <p>Historial de Compras</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Cuarto enlace -->
+        <div class="col">
+            <a href="{% url 'proveedores' %}" class="text-decoration-none">
+                <div class="card shadow-sm h-100 border-0 bg-light transition shadow-sm hover-shadow">
+                    <div class="card-body py-4">
+                        <h3 class="fw-bold">Órdenes de Compra</h3>
+                        <p>Generación de OC</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+{% else %}
+
+    <div class="col-md-6 offset-md-3">
+        <h1>INGRESO</h1>
+        <br/>
+        {% include 'ingresov2.html' %}
+    </div>
+
+{% endif %}
+
+{% endblock %}

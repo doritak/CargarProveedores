@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if user.is_authenticated %}
+
+    <div class="col-md-6 offset-md-3">
+        <h1>AGREGAR UN PROVEEDOR </h1>
+        <br/>
+        <form method="POST" action="{% url 'add_proveedor' %}">
+            {% csrf_token %}
+
+            {{ form.as_p}}
+
+            <br/>
+
+            <div class="row">
+
+                <ul class="list-unstyled d-flex gap-2">
+                      <li>
+                            <button type="submit" class="btn btn-secondary">Ingresar Proveedor</button>
+                      </li>
+
+                       <li>
+                            <a href="{% url 'proveedores' %}" class="btn btn-secondary">Regresar</a>
+                      </li>
+                </ul>
+
+            </div>
+
+        </form>
+    </div>
+
+{% else %}
+    <div class="col-md-6 offset-md-3">
+        <h1>INGRESO</h1>
+        <br/>
+        {% include 'ingresov2.html' %}
+    </div>
+{% endif %}
+{% endblock %}

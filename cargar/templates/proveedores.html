@@ -2,16 +2,14 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-
-    {% if proveedores %}
+    <div class="container-fluid">  <!-- Usamos container-fluid para eliminar el margen -->
         {% include 'listaproveedores.html' %}
-    {% endif %}
-
+    </div>
 {% else %}
     <div class="col-md-6 offset-md-3">
-        <h1>INGRESO</h1>
+        <h1>Favor ingresar primero</h1>
         <br/>
-        {% include 'ingresov2.html' %}
+
     </div>
 
 {% endif %}

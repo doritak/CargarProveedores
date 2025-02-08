@@ -1,0 +1,21 @@
+body {
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: #343a40;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.hover-shadow:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important; /* Sombra suave */
+    transform: translateY(-5px);                         /* Efecto de elevación */
+    background-color: #007bff !important;               /* Azul (Bootstrap primary) */
+    color: white !important;                            /* Texto blanco para contraste */
+    transition: all 0.3s ease-in-out;                   /* Transición suave */
+    cursor: pointer;                                    /* Cursor de interactividad */
+}

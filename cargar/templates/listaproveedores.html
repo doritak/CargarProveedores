@@ -1,33 +1,65 @@
-<h1 class="text-center">Lista de Proveedores </h1>
-<div>
+<h1 class="text-center">Lista de Proveedores</h1>
+
+<!-- Formulario de búsqueda -->
+<form method="GET" class="d-flex justify-content-center mb-4" role="search">
+    <input class="form-control w-25 me-2" type="search" name="search" placeholder="Buscar proveedor o vendedor"
+           value="{{ search_query }}" aria-label="Buscar">
+    <button class="btn btn-outline-primary" type="submit">Buscar</button>
+
+    <!-- Botones para ordenar -->
+    <div class="ms-3">
+        <a href="?search={{ search_query }}&order=asc" class="btn btn-outline-success {% if order == 'asc' %}active{% endif %}">A-Z</a>
+        <a href="?search={{ search_query }}&order=desc" class="btn btn-outline-warning {% if order == 'desc' %}active{% endif %}">Z-A</a>
+        <!-- Botón para agreger un proveedor -->
+        <a href="{% url 'add_proveedor' %}" class="btn btn-primary">Agregar</a>
+    </div>
+
+
+</form>
+
+<!-- Tabla de proveedores -->
+<div class="table-responsive overflow-auto" style="max-height: 500px;">
     <table class="table table-hover table-striped table-bordered table-sm">
-        <thead class="table-dark">
-        <tr>
-            <th scope="col">Proveedor</th>
-            <th scope="col">RUT</th>
-            <th scope="col">Vence</th>
-            <th scope="col">Nombre vendedor</th>
-            <th scope="col">Teléfono</th>
-            <th scope="col">Mail Vendedor</th>
-            <th scope="col">Flete</th>
-            <th scope="col">Transporte</th>
-            <th scope="col">Id</th>
-        </tr>
+        <thead class="table-dark text-center sticky-top">
+            <tr>
+                <th scope="col">Proveedor</th>
+                <th scope="col">RUT</th>
+                <th scope="col">Vence</th>
+                <th scope="col">Nombre Vendedor</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Mail Vendedor</th>
+                <th scope="col">Flete</th>
+                <th scope="col">Transporte</th>
+                <th scope="col">ID</th>
+            </tr>
         </thead>
         <tbody class="table-group-divider">
-        {% for proveedor in proveedores %}
-        <tr>
-            <td>{{ proveedor.nombre_corto }}</td>
-            <td>{{ proveedor.rut }}</td>
-            <td>{{ proveedor.vencimiento }}</td>
-            <td>{{ proveedor.nombre_vendedor }}</td>
-            <td>{{ proveedor.telefono_vendedor }}</td>
-            <td>{{ proveedor.correo_vendedor }}</td>
-            <td>{{ proveedor.tipo_flete }}</td>
-            <td>{{ proveedor.transporte }}</td>
-            <td><a href="{% url 'proveedor' proveedor.id %}">{{ proveedor.id }}</a></td>
-        </tr>
-        {% endfor%}
+            {% if proveedores %}
+                {% for proveedor in proveedores %}
+                    <tr>
+                        <td>{{ proveedor.nombre_corto }}</td>
+                        <td>{{ proveedor.rut }}</td>
+                        <td>{{ proveedor.vencimiento }}</td>
+                        <td>{{ proveedor.nombre_vendedor }}</td>
+                        <td>{{ proveedor.telefono_vendedor }}</td>
+                        <td>{{ proveedor.correo_vendedor }}</td>
+                        <td>{{ proveedor.tipo_flete }}</td>
+                        <td>{{ proveedor.transporte }}</td>
+                        <td><a href="{% url 'proveedor' proveedor.id %}">{{ proveedor.id }}</a></td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="9" class="text-center fw-bold text-danger">No se encontraron resultados.</td>
+                </tr>
+            {% endif %}
         </tbody>
     </table>
 </div>
+
+<!-- Botón "Volver" solo si hubo una búsqueda -->
+{% if search_query %}
+    <div class="text-center mt-3">
+        <a href="{% url 'proveedores' %}" class="btn btn-secondary">Volver</a>
+    </div>
+{% endif %}

@@ -1,6 +1,9 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
+from openpyxl.pivot.record import Record
+
+from .models import Proveedor
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(label="Ingresa tu Correo Electrónico", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Correo Electrónico'}))
@@ -31,3 +34,23 @@ class SignUpForm(UserCreationForm):
         self.fields['password2'].widget.attrs['placeholder'] = 'Confirma Contraseña'
         self.fields['password2'].label = 'Repite tu contraseña'
         self.fields['password2'].help_text = '<span class="form-text text-muted"><small>Ingresa la misma contraseña para validarla.</small></span>'
+
+
+
+# Creo una Form de agregar Proveedores
+class AddProveedorForm(forms.ModelForm):
+    nombre_proveedor = forms.CharField(label="", required=True,  max_length=100, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Razón Social Proveedor'}))
+    vencimiento = forms.CharField(label="", required=True,  max_length=100, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Días de Vencimiento'}))
+    nombre_corto = forms.CharField(label="", required=True,  max_length=100, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Nombre Corto del Proveedor'}))
+    rut = forms.CharField(label="", required=True,  max_length=100, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'RUT Proveedor'}))
+    nombre_vendedor = forms.CharField(label="", required=True,  max_length=100, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Nombre Vendedor'}))
+    telefono_vendedor = forms.CharField(label="", required=True,  max_length=100, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Teléfono del Vendedor'}))
+    correo_vendedor = forms.CharField(label="", required=True,  max_length=100, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Correo Vendedor'}))
+    correo_vendedor2 = forms.CharField(label="", required=True,  max_length=100, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Correo Vendedor_2'}))
+    correo_pago = forms.CharField(label="", required=True,  max_length=100, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Correo Pago'}))
+    tipo_flete = forms.CharField(label="", required=True,  max_length=100, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Tipo de Flete'}))
+    transporte = forms.CharField(label="", required=True,  max_length=100, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Nombre del Transporte'}))
+
+    class Meta:
+        model = Proveedor
+        exclude = ("user",)
