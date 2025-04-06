@@ -10,11 +10,18 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
           </li>
+        
+           {% if user.groups.all|length > 0 %}
+            {% for group in user.groups.all %}
+              {% if group.name == 'Administrador' %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'register' %}">Registrar Usuario</a>
+                </li>
+                {% endif %}
+            {% endfor %}
+          {% endif %}
 
         {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'register' %}">Registrar Usuario</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'index' %}">Iniciar Sesión</a>
           </li>

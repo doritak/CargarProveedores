@@ -6,7 +6,10 @@ urlpatterns = [
     path('proveedores/', views.proveedores, name='proveedores'),
     path('logout/', views.logout_user, name='logout'),
     path('register/', views.register_user, name='register'),
-    path('proveedor/<int:pk>', views.proveedor_record, name='proveedor'),
-    path('delete_proveedor/<int:pk>', views.delete_proveedor, name='delete_proveedor'),
+    path('proveedor/<int:pk>/', views.proveedor_record, name='proveedor'),
+    path('delete_proveedor/<int:pk>/', views.delete_proveedor, name='delete_proveedor'),
     path('add_proveedor/', views.add_proveedor, name='add_proveedor'),
+    path('update_proveedor/<int:pk>/', views.update_proveedor, name='update_proveedor'),
+    path('upload-excel/', views.upload_excel, name='upload_excel'),
+
 ]

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if user.is_authenticated %}
+    <div class="container-fluid">  <!-- Usamos container-fluid para eliminar el margen -->
+        <h1>Datos de {{ tipo }} cargados exitosamente ✅</h1>
+        <a href="{% url 'upload_excel' %}">Subir otro archivo</a>
+    </div>
+{% else %}
+    <div class="col-md-6 offset-md-3">
+        <h1>Favor ingresar primero</h1>
+        <br/>
+
+    </div>
+
+{% endif %}
+{% endblock %}

@@ -10,7 +10,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-
+/* Azul Moderno + Blanco */
 .hover-shadow:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important; /* Sombra suave */
     transform: translateY(-5px);                         /* Efecto de elevación */
@@ -18,4 +18,65 @@ h1 {
     color: white !important;                            /* Texto blanco para contraste */
     transition: all 0.3s ease-in-out;                   /* Transición suave */
     cursor: pointer;                                    /* Cursor de interactividad */
+}
+/* Amarillo Moderno + Texto Oscuro */
+.hover-shadow2:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
+    transform: translateY(-5px);
+    background-color: #f8ff9a !important;   /* Amarillo claro moderno */
+    color: #212529 !important;              /* Gris oscuro para contraste */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Verde Suave + Blanco */
+.hover-shadow3:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
+    transform: translateY(-5px);
+    background-color: #28a745 !important;   /* Verde Bootstrap Success */
+    color: #ffffff !important;              /* Blanco para contraste */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Rojo Intenso + Blanco */
+.hover-shadow4:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
+    transform: translateY(-5px);
+    background-color: #dc3545 !important;   /* Rojo Bootstrap Danger */
+    color: #ffffff !important;              /* Blanco para contraste */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Gris Claro + Texto Oscuro */
+.hover-shadow5:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
+    transform: translateY(-5px);
+    background-color: #f8ff9a !important;   /* Gris claro */
+    color: #212529 !important;              /* Gris oscuro para legibilidad */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Estilo "En Construcción" */
+.hover-shadow-disabled:hover {
+    box-shadow: none !important;                    /* Sin sombra para un aspecto más plano */
+    background-color: #495057 !important;           /* Gris oscuro tipo deshabilitado */
+    color: #ced4da !important;                      /* Gris claro para el texto */
+    transition: background-color 0.3s ease-in-out;  /* Transición suave */
+    cursor: not-allowed !important;                 /* Cursor de "no permitido" */
+    opacity: 0.8;                                   /* Ligera opacidad para dar efecto desactivado */
+}
+
+/* Mejora el efecto de desvanecimiento */
+.alert.fade {
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    opacity: 0;
+    transform: translateY(-30px); /* Efecto de deslizamiento hacia arriba */
+}
+
+.alert.show {
+    opacity: 1;
+    transform: translateY(0);
 }

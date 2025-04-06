@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if user.is_authenticated %}
+    <div class="container-fluid">  <!-- Usamos container-fluid para eliminar el margen -->
+        <h1>Subir archivo Excel</h1>
+
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Subir</button>
+        </form>
+    </div>
+{% else %}
+    <div class="col-md-6 offset-md-3">
+        <h1>Favor ingresar primero</h1>
+        <br/>
+
+    </div>
+
+{% endif %}
+{% endblock %}
+

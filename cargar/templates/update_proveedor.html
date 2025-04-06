@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if user.is_authenticated %}
+    <div class="col-md-6 offset-md-3">
+        <h1>ACTUALIZA PROVEEDOR</h1>
+        <br/>
+        <form id="updateForm" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br/>
+
+            <div class="row">
+                <ul class="list-unstyled d-flex gap-2">
+                    <li>
+                        <!-- Botón para abrir el modal de confirmación -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmUpdateModal">
+                            Actualizar Proveedor
+                        </button>
+                    </li>
+                    <li>
+                        <a href="{% url 'proveedores' %}" class="btn btn-secondary">Regresar</a>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+
+    <!-- Modal de Confirmación para Actualización -->
+    <div class="modal fade" id="confirmUpdateModal" tabindex="-1" aria-labelledby="confirmUpdateModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmUpdateModalLabel">Confirmar Actualización</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas actualizar la información de este proveedor?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="confirmUpdateBtn">Confirmar Actualización</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alerta de Éxito -->
+    <div id="updateSuccessAlert" class="alert alert-success alert-dismissible fade show mt-4" role="alert" style="display: none;">
+        Proveedor actualizado correctamente.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+
+{% else %}
+    <div class="col-md-6 offset-md-3">
+        <h1>INGRESO</h1>
+        <br/>
+        {% include 'ingresov2.html' %}
+    </div>
+{% endif %}
+
+{% endblock %}

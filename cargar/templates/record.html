@@ -3,8 +3,9 @@
 
 
 
-<div class="card">
-  <div class="card-header"><strong>{{ proveedor_record.nombre_proveedor }}</strong>
+<div class="card shadow-sm border-0 rounded-3">
+  <div class="card-header bg-primary-subtle  text-primary-emphasis">
+    <strong>{{ proveedor_record.nombre_proveedor }}</strong>
   </div>
 
 <div class="card-body">
@@ -61,13 +62,45 @@
     <a href="{% url 'proveedores' %}" class="btn btn-secondary">Regresar</a>
   </li>
   <li>
-    <a href="{% url 'delete_proveedor' proveedor_record.id %}" class="btn btn-danger">Eliminar</a>
+    <li>
+    <a href="{% url 'update_proveedor' proveedor_record.id %}" class="btn btn-primary">Actualizar</a>
+  </li>
+  <li>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-record-id="{{ proveedor_record.id }}">
+      Eliminar
+    </button>
   </li>
    <li>
     <a href="{% url 'index' %}" class="btn btn-secondary">Inicio</a>
   </li>
 </ul>
 
+<!-- Modal de Confirmación -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Eliminación</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        ¿Estás seguro de que deseas eliminar este proveedor?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <form id="deleteForm" method="POST" action="">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- Alerta de Éxito -->
+<div id="successAlert" class="alert alert-success alert-dismissible fade show mt-4" role="alert" style="display: none;">
+  Proveedor eliminado correctamente.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 
 {% endblock %}

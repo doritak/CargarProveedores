@@ -1,0 +1,938 @@
+2025-04-05 19:11:38,707 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-04-05 19:11:45,212 [INFO] django.server: "GET / HTTP/1.1" 200 2626
+2025-04-05 19:11:45,246 [INFO] django.server: "GET /static/cargar/js/alerts.js HTTP/1.1" 200 3100
+2025-04-05 19:11:45,247 [INFO] django.server: "GET /static/cargar/css/style.css HTTP/1.1" 200 3093
+2025-04-05 19:11:45,551 [WARNING] django.request: Not Found: /favicon.ico
+2025-04-05 19:11:45,551 [WARNING] django.server: "GET /favicon.ico HTTP/1.1" 404 4627
+2025-04-05 19:11:50,247 [INFO] django.server: "POST / HTTP/1.1" 302 0
+2025-04-05 19:11:50,261 [INFO] django.server: "GET / HTTP/1.1" 200 4225
+2025-04-05 19:12:03,098 [ERROR] django.request: Internal Server Error: /proveedores/
+Traceback (most recent call last):
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.ProgrammingError: (1146, "Table 'ferreteria.cargar_proveedor' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\doran\Dropbox\privado_Dorita\_Dipl_Python\_MeinProjekts\_Prueba_Error_Exercices\Proyecto_1\cargar\views.py", line 63, in proveedores
+    return render(request, 'proveedores.html', {
+        'proveedores': provee,
+        'search_query': search_query,
+        'order': order
+    })
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    if match:
+       ^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 414, in __bool__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: (1146, "Table 'ferreteria.cargar_proveedor' doesn't exist")
+2025-04-05 19:12:03,107 [ERROR] django.server: "GET /proveedores/ HTTP/1.1" 500 273343
+2025-04-05 19:12:11,408 [ERROR] django.request: Internal Server Error: /proveedores/
+Traceback (most recent call last):
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.ProgrammingError: (1146, "Table 'ferreteria.cargar_proveedor' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\doran\Dropbox\privado_Dorita\_Dipl_Python\_MeinProjekts\_Prueba_Error_Exercices\Proyecto_1\cargar\views.py", line 63, in proveedores
+    return render(request, 'proveedores.html', {
+        'proveedores': provee,
+        'search_query': search_query,
+        'order': order
+    })
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    if match:
+       ^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 414, in __bool__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: (1146, "Table 'ferreteria.cargar_proveedor' doesn't exist")
+2025-04-05 19:12:11,414 [ERROR] django.server: "GET /proveedores/ HTTP/1.1" 500 273343
+2025-04-05 19:12:22,498 [INFO] django.server: "GET / HTTP/1.1" 200 3969
+2025-04-05 19:12:25,045 [ERROR] django.request: Internal Server Error: /proveedores/
+Traceback (most recent call last):
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.ProgrammingError: (1146, "Table 'ferreteria.cargar_proveedor' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\doran\Dropbox\privado_Dorita\_Dipl_Python\_MeinProjekts\_Prueba_Error_Exercices\Proyecto_1\cargar\views.py", line 63, in proveedores
+    return render(request, 'proveedores.html', {
+        'proveedores': provee,
+        'search_query': search_query,
+        'order': order
+    })
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    if match:
+       ^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 414, in __bool__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: (1146, "Table 'ferreteria.cargar_proveedor' doesn't exist")
+2025-04-05 19:12:25,050 [ERROR] django.server: "GET /proveedores/ HTTP/1.1" 500 273343
+2025-04-05 19:12:53,880 [INFO] django.server: "GET / HTTP/1.1" 200 3969
+2025-04-05 19:13:08,269 [INFO] django.server: "GET / HTTP/1.1" 200 3969
+2025-04-05 19:13:10,881 [INFO] django.server: "GET /logout/ HTTP/1.1" 302 0
+2025-04-05 19:13:10,885 [INFO] django.server: "GET / HTTP/1.1" 200 2881
+2025-04-05 19:13:14,588 [INFO] django.server: "POST / HTTP/1.1" 302 0
+2025-04-05 19:13:14,595 [INFO] django.server: "GET / HTTP/1.1" 200 4378
+2025-04-05 19:17:36,172 [INFO] django.server: "GET / HTTP/1.1" 200 4140
+2025-04-05 19:17:39,198 [INFO] django.server: "GET /upload-excel/ HTTP/1.1" 200 2834
+2025-04-05 19:18:04,890 [ERROR] cargar.models: Error al insertar tipos de flete desde Excel: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:18:04,895 [INFO] django.server: "POST /upload-excel/ HTTP/1.1" 200 2169
+2025-04-05 19:18:10,846 [INFO] django.server: "GET /upload-excel/ HTTP/1.1" 200 2834
+2025-04-05 19:21:13,370 [ERROR] cargar.models: Error al insertar transportistas desde Excel: (1146, "Table 'ferreteria.cargar_transporte' doesn't exist")
+2025-04-05 19:21:13,375 [INFO] django.server: "POST /upload-excel/ HTTP/1.1" 200 2174
+2025-04-05 19:21:16,224 [INFO] django.server: "GET /upload-excel/ HTTP/1.1" 200 2834
+2025-04-05 19:21:27,942 [ERROR] cargar.models: Error al insertar el proveedor CHRISTENSEN COMERCIAL S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,943 [ERROR] cargar.models: Error al insertar el proveedor CODELPA CHILE S A - Ceresita: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,943 [ERROR] cargar.models: Error al insertar el proveedor Com e Ind Plasticos Hoffens S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,944 [ERROR] cargar.models: Error al insertar el proveedor ARAGON S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,945 [ERROR] cargar.models: Error al insertar el proveedor Comercial Tornagaleon Ltda: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,945 [ERROR] cargar.models: Error al insertar el proveedor CONFORMADORA DE METALES LTDA - Conmetal: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,946 [ERROR] cargar.models: Error al insertar el proveedor DE VICENTE PLASTICOS S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,947 [ERROR] cargar.models: Error al insertar el proveedor Distribuidora Plasticom Ltda: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,947 [ERROR] cargar.models: Error al insertar el proveedor FORMAC SA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,949 [ERROR] cargar.models: Error al insertar el proveedor Graf Industrial y Comercial Ltda: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,950 [ERROR] cargar.models: Error al insertar el proveedor HECTOR ALIRO GALLARDO GALLARDO: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,950 [ERROR] cargar.models: Error al insertar el proveedor HERRERA Y HERRERA LIMITADA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,951 [ERROR] cargar.models: Error al insertar el proveedor Igma Antofagasta Spa: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,952 [ERROR] cargar.models: Error al insertar el proveedor IMPORTADORA AGROFOR S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,952 [ERROR] cargar.models: Error al insertar el proveedor IMPORTADORA DE MAQUINARIAS VALPARAISO LTDA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,953 [ERROR] cargar.models: Error al insertar el proveedor Importadora ECOSA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,954 [ERROR] cargar.models: Error al insertar el proveedor IMPORTADORA IVAN ARAYA E HIJOS LTDA.: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,955 [ERROR] cargar.models: Error al insertar el proveedor LILIANA NOVOA CAYO: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,955 [ERROR] cargar.models: Error al insertar el proveedor COMERCIALIZADORA SEBCOR LIMITADA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,956 [ERROR] cargar.models: Error al insertar el proveedor PINTURAS MARBELLA SPA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,957 [ERROR] cargar.models: Error al insertar el proveedor Marienberg y Cía. en Comandita: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,958 [ERROR] cargar.models: Error al insertar el proveedor METALURGICA LINO HENRIQUEZ S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,958 [ERROR] cargar.models: Error al insertar el proveedor Miguel Canale y Cia Ltda: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,959 [ERROR] cargar.models: Error al insertar el proveedor Mosaico S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,960 [ERROR] cargar.models: Error al insertar el proveedor Nelson Mora Ortiz EIRL: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,961 [ERROR] cargar.models: Error al insertar el proveedor PARETI Y COMPANIA LTDA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,962 [ERROR] cargar.models: Error al insertar el proveedor PAREX CHILE LTDA - CADINA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,962 [ERROR] cargar.models: Error al insertar el proveedor PATRICIO LIOI Y CIA LTDA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,963 [ERROR] cargar.models: Error al insertar el proveedor PATRICIO OTERO F Y CIA LTDA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,964 [ERROR] cargar.models: Error al insertar el proveedor Pernoval S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,965 [ERROR] cargar.models: Error al insertar el proveedor Petroflex S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,965 [ERROR] cargar.models: Error al insertar el proveedor PINTURAS TRICOLOR S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,967 [ERROR] cargar.models: Error al insertar el proveedor PRODALAM S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,967 [ERROR] cargar.models: Error al insertar el proveedor QUIMICA UNIVERSAL LTDA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,968 [ERROR] cargar.models: Error al insertar el proveedor Rema Comercial e Industrial Ltda: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,969 [ERROR] cargar.models: Error al insertar el proveedor RICARDO ALARCON VALENZUELA  EIRL: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,970 [ERROR] cargar.models: Error al insertar el proveedor BOX SOLUTION LTDA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,970 [ERROR] cargar.models: Error al insertar el proveedor SALOMON SACK SA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,971 [ERROR] cargar.models: Error al insertar el proveedor SANDE S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,971 [ERROR] cargar.models: Error al insertar el proveedor SCHUMY RODRIGUEZ LTDA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,972 [ERROR] cargar.models: Error al insertar el proveedor EXTINTORES OMEGA SPA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,973 [ERROR] cargar.models: Error al insertar el proveedor SODIMAC S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,974 [ERROR] cargar.models: Error al insertar el proveedor SOUDAL S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,974 [ERROR] cargar.models: Error al insertar el proveedor TEOLINDA DEL CARMEN ARANCIBIA CASTRO: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,976 [ERROR] cargar.models: Error al insertar el proveedor Transporte GyG Ltda: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,976 [ERROR] cargar.models: Error al insertar el proveedor VECTOR S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,977 [ERROR] cargar.models: Error al insertar el proveedor VERSACHEM CHILE S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,978 [ERROR] cargar.models: Error al insertar el proveedor Wurth Chile Ltda.: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,978 [ERROR] cargar.models: Error al insertar el proveedor LORENA ANDRADE MANSILLA TRANSPORTES EIRL: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,979 [ERROR] cargar.models: Error al insertar el proveedor EUROMOB IMP DISTR Y COMER LTDA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,980 [ERROR] cargar.models: Error al insertar el proveedor Claudia Machuca Cereceda: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,981 [ERROR] cargar.models: Error al insertar el proveedor Construmart S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,981 [ERROR] cargar.models: Error al insertar el proveedor EBEMA S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,982 [ERROR] cargar.models: Error al insertar el proveedor ABASTECEDORA DEL COMERCIO LTDA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,982 [ERROR] cargar.models: Error al insertar el proveedor INDURA S.A.: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,983 [ERROR] cargar.models: Error al insertar el proveedor QUIMICA PASSOL S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,984 [ERROR] cargar.models: Error al insertar el proveedor LIZCAL S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,985 [ERROR] cargar.models: Error al insertar el proveedor Comercial Uyustools Chile Ltda: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,986 [ERROR] cargar.models: Error al insertar el proveedor Proveedores integrales del Norte S.A Prinorte: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,986 [ERROR] cargar.models: Error al insertar el proveedor Industrial Supplier Spa. RAYTAN: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,987 [ERROR] cargar.models: Error al insertar el proveedor Soc Comercial y Distr Tarapaca Ltda: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,988 [ERROR] cargar.models: Error al insertar el proveedor CasNorte Ltda.: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,988 [ERROR] cargar.models: Error al insertar el proveedor Ferretería Prat: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,989 [ERROR] cargar.models: Error al insertar el proveedor Importadora Eurogom Ltda.: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,990 [ERROR] cargar.models: Error al insertar el proveedor Tecbolt S.A. Mamut: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,991 [ERROR] cargar.models: Error al insertar el proveedor Dartel Antofagasta ltda: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,992 [ERROR] cargar.models: Error al insertar el proveedor Henkel Chile Ltda - Agorex: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,995 [ERROR] cargar.models: Error al insertar el proveedor IMPORTADORA NORGRAF SPA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,996 [ERROR] cargar.models: Error al insertar el proveedor ## Dap Ducasse Diseño Ltda: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,997 [ERROR] cargar.models: Error al insertar el proveedor Importadora y Expor Booniga Ltda: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,998 [ERROR] cargar.models: Error al insertar el proveedor ## PRODUCTOS  AUTOADHESIVOS  FIXO S.A.: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,999 [ERROR] cargar.models: Error al insertar el proveedor ODIS SPA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:27,999 [ERROR] cargar.models: Error al insertar el proveedor IMPORTOTAL SPA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:28,000 [ERROR] cargar.models: Error al insertar el proveedor IMPORTADORA Y EXPORTADORA JIN CHEN LIMITADA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:28,000 [ERROR] cargar.models: Error al insertar el proveedor Dartel S.A.: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:28,001 [ERROR] cargar.models: Error al insertar el proveedor GUMERCINDO ENRIQUE LILLO CORTES: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:28,002 [ERROR] cargar.models: Error al insertar el proveedor Impor y Expor G-Land Limitada: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:28,003 [ERROR] cargar.models: Error al insertar el proveedor ELECTRICIDAD GOBANTES S.A.: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:28,004 [ERROR] cargar.models: Error al insertar el proveedor CARLOS ENRIQUE GUAJARDO GALVEZ: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:28,005 [ERROR] cargar.models: Error al insertar el proveedor Sociedad Ferretería Andino: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:28,005 [ERROR] cargar.models: Error al insertar el proveedor SOCIEDAD DE TRANSPORTE DE CARGA Y LOGISTICA MERY Y RIOS SPA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:28,006 [ERROR] cargar.models: Error al insertar el proveedor ## FANALOZA SA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:28,007 [ERROR] cargar.models: Error al insertar el proveedor Rigoberto Carrasco Bidón: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:28,007 [ERROR] cargar.models: Error al insertar el proveedor RHONA S A: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:28,008 [ERROR] cargar.models: Error al insertar el proveedor HELA S A C I IMPORTADORA Y MANUFAC VON: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:28,009 [ERROR] cargar.models: Error al insertar el proveedor Comercial Magi Spa exSebcor: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:28,010 [ERROR] cargar.models: Error al insertar el proveedor DNA Electric SPA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:28,010 [ERROR] cargar.models: Error al insertar el proveedor COSMOPLAS S.A.: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:28,011 [ERROR] cargar.models: Error al insertar el proveedor ## CASTILLO Y GUZMAN SPA: (1146, "Table 'ferreteria.cargar_tipoflete' doesn't exist")
+2025-04-05 19:21:28,014 [INFO] django.server: "POST /upload-excel/ HTTP/1.1" 200 2173
+2025-04-05 19:21:30,756 [INFO] django.server: "GET /upload-excel/ HTTP/1.1" 200 2834
+2025-04-05 19:21:33,038 [INFO] django.server: "GET / HTTP/1.1" 200 4140
+2025-04-05 19:21:34,384 [ERROR] django.request: Internal Server Error: /proveedores/
+Traceback (most recent call last):
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.ProgrammingError: (1146, "Table 'ferreteria.cargar_proveedor' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\doran\Dropbox\privado_Dorita\_Dipl_Python\_MeinProjekts\_Prueba_Error_Exercices\Proyecto_1\cargar\views.py", line 63, in proveedores
+    return render(request, 'proveedores.html', {
+        'proveedores': provee,
+        'search_query': search_query,
+        'order': order
+    })
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 326, in render
+    if match:
+       ^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 414, in __bool__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\doran\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: (1146, "Table 'ferreteria.cargar_proveedor' doesn't exist")
+2025-04-05 19:21:34,390 [ERROR] django.server: "GET /proveedores/ HTTP/1.1" 500 273341
+2025-04-05 19:37:35,611 [INFO] django.server: "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+2025-04-05 19:37:35,638 [INFO] django.server: "GET /admin/ HTTP/1.1" 200 11196
+2025-04-05 19:37:35,653 [INFO] django.server: "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+2025-04-05 19:37:35,653 [INFO] django.server: "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+2025-04-05 19:37:35,654 [INFO] django.server: "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+2025-04-05 19:37:35,654 [INFO] django.server: "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+2025-04-05 19:37:35,654 [INFO] django.server: "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+2025-04-05 19:37:35,654 [INFO] django.server: "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+2025-04-05 19:37:35,658 [INFO] django.server: "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+2025-04-05 19:37:35,662 [INFO] django.server: "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+2025-04-05 19:37:35,662 [INFO] django.server: "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+2025-04-05 19:57:31,618 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-04-05 19:59:03,550 [INFO] django.server: "GET / HTTP/1.1" 200 2626
+2025-04-05 19:59:12,994 [INFO] django.server: "POST / HTTP/1.1" 302 0
+2025-04-05 19:59:13,002 [INFO] django.server: "GET / HTTP/1.1" 200 4189
+2025-04-05 19:59:30,574 [INFO] django.server: "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+2025-04-05 19:59:30,603 [INFO] django.server: "GET /admin/ HTTP/1.1" 200 8021
+2025-04-05 19:59:35,039 [INFO] django.server: "GET /admin/auth/user/add/ HTTP/1.1" 200 13522
+2025-04-05 19:59:35,052 [INFO] django.server: "GET /static/admin/css/forms.css HTTP/1.1" 200 8794
+2025-04-05 19:59:35,062 [INFO] django.server: "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+2025-04-05 19:59:35,062 [INFO] django.server: "GET /static/admin/css/unusable_password_field.css HTTP/1.1" 200 663
+2025-04-05 19:59:35,063 [INFO] django.server: "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+2025-04-05 19:59:35,064 [INFO] django.server: "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+2025-04-05 19:59:35,071 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-05 19:59:35,072 [INFO] django.server: "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+2025-04-05 19:59:35,072 [INFO] django.server: "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+2025-04-05 19:59:35,073 [INFO] django.server: "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+2025-04-05 19:59:35,073 [INFO] django.server: "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+2025-04-05 19:59:35,075 [INFO] django.server: "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+2025-04-05 19:59:35,076 [INFO] django.server: "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+2025-04-05 19:59:35,080 [INFO] django.server: "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+2025-04-05 19:59:35,082 [INFO] django.server: "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+2025-04-05 19:59:35,086 [INFO] django.server: "GET /static/admin/js/unusable_password_field.js HTTP/1.1" 200 1480
+2025-04-05 20:00:03,697 [INFO] django.server: "POST /admin/auth/user/add/ HTTP/1.1" 302 0
+2025-04-05 20:00:03,709 [INFO] django.server: "GET /admin/auth/user/add/ HTTP/1.1" 200 13762
+2025-04-05 20:00:03,723 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-05 20:00:03,737 [INFO] django.server: "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+2025-04-05 20:00:21,241 [INFO] django.server: "GET /admin/auth/group/add/ HTTP/1.1" 200 13753
+2025-04-05 20:00:21,253 [INFO] django.server: "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+2025-04-05 20:00:21,254 [INFO] django.server: "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15502
+2025-04-05 20:00:21,256 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-05 20:00:21,318 [INFO] django.server: "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+2025-04-05 20:00:21,318 [INFO] django.server: "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+2025-04-05 20:00:21,318 [INFO] django.server: "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+2025-04-05 20:00:21,318 [INFO] django.server: "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+2025-04-05 20:00:55,932 [INFO] django.server: "POST /admin/auth/group/add/ HTTP/1.1" 302 0
+2025-04-05 20:00:55,960 [INFO] django.server: "GET /admin/auth/group/ HTTP/1.1" 200 10672
+2025-04-05 20:00:55,973 [INFO] django.server: "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+2025-04-05 20:00:55,977 [INFO] django.server: "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+2025-04-05 20:00:55,980 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-05 20:00:55,990 [INFO] django.server: "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+2025-04-05 20:01:00,024 [INFO] django.server: "GET /admin/auth/group/add/ HTTP/1.1" 200 13753
+2025-04-05 20:01:00,039 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-05 20:01:24,917 [INFO] django.server: "POST /admin/auth/group/add/ HTTP/1.1" 302 0
+2025-04-05 20:01:24,929 [INFO] django.server: "GET /admin/auth/group/ HTTP/1.1" 200 10934
+2025-04-05 20:01:24,946 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-05 20:01:39,263 [INFO] django.server: "GET /admin/auth/ HTTP/1.1" 200 5939
+2025-04-05 20:01:42,399 [INFO] django.server: "GET /admin/auth/user/ HTTP/1.1" 200 13649
+2025-04-05 20:01:42,412 [INFO] django.server: "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+2025-04-05 20:01:42,416 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-05 20:01:42,426 [INFO] django.server: "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+2025-04-05 20:01:42,427 [INFO] django.server: "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+2025-04-05 20:01:50,307 [INFO] django.server: "GET /admin/auth/user/2/change/ HTTP/1.1" 200 24003
+2025-04-05 20:01:50,324 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-05 20:01:50,325 [INFO] django.server: "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+2025-04-05 20:01:50,325 [INFO] django.server: "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+2025-04-05 20:01:50,386 [INFO] django.server: "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+2025-04-05 20:01:50,386 [INFO] django.server: "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+2025-04-05 20:02:02,549 [INFO] django.server: "GET /admin/auth/user/ HTTP/1.1" 200 13649
+2025-04-05 20:02:04,204 [INFO] django.server: "GET /admin/auth/user/1/change/ HTTP/1.1" 200 24076
+2025-04-05 20:02:04,219 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-05 20:02:17,592 [INFO] django.server: "POST /admin/auth/user/1/change/ HTTP/1.1" 302 0
+2025-04-05 20:02:17,604 [INFO] django.server: "GET /admin/auth/user/ HTTP/1.1" 200 13843
+2025-04-05 20:02:17,621 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-05 20:02:19,636 [INFO] django.server: "GET /admin/auth/user/2/change/ HTTP/1.1" 200 24003
+2025-04-05 20:02:19,649 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-05 20:02:29,164 [INFO] django.server: "POST /admin/auth/user/2/change/ HTTP/1.1" 302 0
+2025-04-05 20:02:29,177 [INFO] django.server: "GET /admin/auth/user/ HTTP/1.1" 200 13845
+2025-04-05 20:02:29,195 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-05 20:02:35,520 [INFO] django.server: "GET / HTTP/1.1" 200 3985
+2025-04-05 20:02:40,231 [INFO] django.server: "GET / HTTP/1.1" 200 3985
+2025-04-05 20:02:41,787 [INFO] django.server: "GET /logout/ HTTP/1.1" 302 0
+2025-04-05 20:02:41,790 [INFO] django.server: "GET / HTTP/1.1" 200 2881
+2025-04-05 20:02:46,554 [INFO] django.server: "POST / HTTP/1.1" 302 0
+2025-04-05 20:02:46,557 [INFO] django.server: "GET / HTTP/1.1" 200 2870
+2025-04-05 20:02:56,065 [INFO] django.server: "POST / HTTP/1.1" 302 0
+2025-04-05 20:02:56,072 [INFO] django.server: "GET / HTTP/1.1" 200 4241
+2025-04-05 20:03:05,825 [INFO] django.server: "GET / HTTP/1.1" 200 3985
+2025-04-05 20:03:14,565 [INFO] django.server: "GET /logout/ HTTP/1.1" 302 0
+2025-04-05 20:03:14,568 [INFO] django.server: "GET / HTTP/1.1" 200 2881
+2025-04-05 20:03:17,702 [INFO] django.server: "GET / HTTP/1.1" 200 2626
+2025-04-05 20:03:19,393 [INFO] django.server: "GET / HTTP/1.1" 200 2626
+2025-04-05 20:03:28,671 [INFO] django.server: "POST / HTTP/1.1" 302 0
+2025-04-05 20:03:28,677 [INFO] django.server: "GET / HTTP/1.1" 200 4191
+2025-04-05 20:03:33,194 [INFO] django.server: "GET /upload-excel/ HTTP/1.1" 200 2629
+2025-04-05 20:03:46,588 [INFO] cargar.models: TipoFlete 'Antof. ir a buscar' creado.
+2025-04-05 20:03:46,590 [INFO] cargar.models: TipoFlete 'Antof. lo despachan' creado.
+2025-04-05 20:03:46,592 [INFO] cargar.models: TipoFlete 'Iqq pagar flete' creado.
+2025-04-05 20:03:46,593 [INFO] cargar.models: TipoFlete 'No aplica' creado.
+2025-04-05 20:03:46,595 [INFO] cargar.models: TipoFlete 'Stgo. flete incluído' creado.
+2025-04-05 20:03:46,597 [INFO] cargar.models: TipoFlete 'Stgo. pagar flete' creado.
+2025-04-05 20:03:46,601 [INFO] django.server: "POST /upload-excel/ HTTP/1.1" 200 1964
+2025-04-05 20:03:48,926 [INFO] django.server: "GET /upload-excel/ HTTP/1.1" 200 2629
+2025-04-05 20:03:57,389 [INFO] cargar.models: Transporte 'Propio Del Proveedor' creado.
+2025-04-05 20:03:57,391 [INFO] cargar.models: Transporte 'Propio Fsc' creado.
+2025-04-05 20:03:57,393 [INFO] cargar.models: Transporte 'Pullmanbus' creado.
+2025-04-05 20:03:57,395 [INFO] cargar.models: Transporte 'Samex' creado.
+2025-04-05 20:03:57,396 [INFO] cargar.models: Transporte 'Transp. Medalla' creado.
+2025-04-05 20:03:57,398 [INFO] cargar.models: Transporte 'Transp.Alamo' creado.
+2025-04-05 20:03:57,400 [INFO] cargar.models: Transporte 'Transp.Gyg' creado.
+2025-04-05 20:03:57,402 [INFO] django.server: "POST /upload-excel/ HTTP/1.1" 200 1969
+2025-04-05 20:03:59,480 [INFO] django.server: "GET /upload-excel/ HTTP/1.1" 200 2629
+2025-04-05 20:04:07,963 [INFO] cargar.models: Proveedor CHRISTENSEN COMERCIAL S A creado exitosamente.
+2025-04-05 20:04:07,965 [ERROR] cargar.models: Error al insertar el proveedor CODELPA CHILE S A - Ceresita: (1406, "Data too long for column 'telefono_vendedor' at row 1")
+2025-04-05 20:04:07,968 [ERROR] cargar.models: Error al insertar el proveedor Com e Ind Plasticos Hoffens S A: (1406, "Data too long for column 'telefono_vendedor' at row 1")
+2025-04-05 20:04:07,972 [INFO] cargar.models: Proveedor ARAGON S A creado exitosamente.
+2025-04-05 20:04:07,976 [INFO] cargar.models: Proveedor Comercial Tornagaleon Ltda creado exitosamente.
+2025-04-05 20:04:07,979 [INFO] cargar.models: Proveedor CONFORMADORA DE METALES LTDA - Conmetal creado exitosamente.
+2025-04-05 20:04:07,982 [INFO] cargar.models: Proveedor DE VICENTE PLASTICOS S A creado exitosamente.
+2025-04-05 20:04:07,985 [INFO] cargar.models: Proveedor Distribuidora Plasticom Ltda creado exitosamente.
+2025-04-05 20:04:07,989 [INFO] cargar.models: Proveedor FORMAC SA creado exitosamente.
+2025-04-05 20:04:07,992 [INFO] cargar.models: Proveedor Graf Industrial y Comercial Ltda creado exitosamente.
+2025-04-05 20:04:07,995 [INFO] cargar.models: Proveedor HECTOR ALIRO GALLARDO GALLARDO creado exitosamente.
+2025-04-05 20:04:07,999 [INFO] cargar.models: Proveedor HERRERA Y HERRERA LIMITADA creado exitosamente.
+2025-04-05 20:04:08,003 [INFO] cargar.models: Proveedor Igma Antofagasta Spa creado exitosamente.
+2025-04-05 20:04:08,007 [INFO] cargar.models: Proveedor IMPORTADORA AGROFOR S A creado exitosamente.
+2025-04-05 20:04:08,011 [INFO] cargar.models: Proveedor IMPORTADORA DE MAQUINARIAS VALPARAISO LTDA creado exitosamente.
+2025-04-05 20:04:08,015 [INFO] cargar.models: Proveedor Importadora ECOSA creado exitosamente.
+2025-04-05 20:04:08,019 [INFO] cargar.models: Proveedor IMPORTADORA IVAN ARAYA E HIJOS LTDA. creado exitosamente.
+2025-04-05 20:04:08,022 [INFO] cargar.models: Proveedor LILIANA NOVOA CAYO creado exitosamente.
+2025-04-05 20:04:08,026 [INFO] cargar.models: Proveedor COMERCIALIZADORA SEBCOR LIMITADA creado exitosamente.
+2025-04-05 20:04:08,030 [INFO] cargar.models: Proveedor PINTURAS MARBELLA SPA creado exitosamente.
+2025-04-05 20:04:08,032 [INFO] cargar.models: Proveedor Marienberg y Cía. en Comandita creado exitosamente.
+2025-04-05 20:04:08,036 [INFO] cargar.models: Proveedor METALURGICA LINO HENRIQUEZ S A creado exitosamente.
+2025-04-05 20:04:08,039 [INFO] cargar.models: Proveedor Miguel Canale y Cia Ltda creado exitosamente.
+2025-04-05 20:04:08,043 [INFO] cargar.models: Proveedor Mosaico S A creado exitosamente.
+2025-04-05 20:04:08,046 [INFO] cargar.models: Proveedor Nelson Mora Ortiz EIRL creado exitosamente.
+2025-04-05 20:04:08,050 [INFO] cargar.models: Proveedor PARETI Y COMPANIA LTDA creado exitosamente.
+2025-04-05 20:04:08,053 [INFO] cargar.models: Proveedor PAREX CHILE LTDA - CADINA creado exitosamente.
+2025-04-05 20:04:08,056 [INFO] cargar.models: Proveedor PATRICIO LIOI Y CIA LTDA creado exitosamente.
+2025-04-05 20:04:08,060 [INFO] cargar.models: Proveedor PATRICIO OTERO F Y CIA LTDA creado exitosamente.
+2025-04-05 20:04:08,063 [INFO] cargar.models: Proveedor Pernoval S A creado exitosamente.
+2025-04-05 20:04:08,066 [INFO] cargar.models: Proveedor Petroflex S A creado exitosamente.
+2025-04-05 20:04:08,069 [INFO] cargar.models: Proveedor PINTURAS TRICOLOR S A creado exitosamente.
+2025-04-05 20:04:08,073 [INFO] cargar.models: Proveedor PRODALAM S A creado exitosamente.
+2025-04-05 20:04:08,076 [INFO] cargar.models: Proveedor QUIMICA UNIVERSAL LTDA creado exitosamente.
+2025-04-05 20:04:08,080 [INFO] cargar.models: Proveedor Rema Comercial e Industrial Ltda creado exitosamente.
+2025-04-05 20:04:08,084 [INFO] cargar.models: Proveedor RICARDO ALARCON VALENZUELA  EIRL creado exitosamente.
+2025-04-05 20:04:08,088 [INFO] cargar.models: Proveedor BOX SOLUTION LTDA creado exitosamente.
+2025-04-05 20:04:08,092 [INFO] cargar.models: Proveedor SALOMON SACK SA creado exitosamente.
+2025-04-05 20:04:08,094 [ERROR] cargar.models: Error al insertar el proveedor SANDE S A: (1406, "Data too long for column 'telefono_vendedor' at row 1")
+2025-04-05 20:04:08,098 [INFO] cargar.models: Proveedor SCHUMY RODRIGUEZ LTDA creado exitosamente.
+2025-04-05 20:04:08,101 [INFO] cargar.models: Proveedor EXTINTORES OMEGA SPA creado exitosamente.
+2025-04-05 20:04:08,104 [ERROR] cargar.models: Error al insertar el proveedor SODIMAC S A: (1406, "Data too long for column 'telefono_vendedor' at row 1")
+2025-04-05 20:04:08,107 [INFO] cargar.models: Proveedor SOUDAL S A creado exitosamente.
+2025-04-05 20:04:08,110 [INFO] cargar.models: Proveedor TEOLINDA DEL CARMEN ARANCIBIA CASTRO creado exitosamente.
+2025-04-05 20:04:08,113 [INFO] cargar.models: Proveedor Transporte GyG Ltda creado exitosamente.
+2025-04-05 20:04:08,116 [ERROR] cargar.models: Error al insertar el proveedor VECTOR S A: (1406, "Data too long for column 'telefono_vendedor' at row 1")
+2025-04-05 20:04:08,119 [INFO] cargar.models: Proveedor VERSACHEM CHILE S A creado exitosamente.
+2025-04-05 20:04:08,122 [INFO] cargar.models: Proveedor Wurth Chile Ltda. creado exitosamente.
+2025-04-05 20:04:08,125 [INFO] cargar.models: Proveedor LORENA ANDRADE MANSILLA TRANSPORTES EIRL creado exitosamente.
+2025-04-05 20:04:08,128 [INFO] cargar.models: Proveedor EUROMOB IMP DISTR Y COMER LTDA creado exitosamente.
+2025-04-05 20:04:08,131 [INFO] cargar.models: Proveedor Claudia Machuca Cereceda creado exitosamente.
+2025-04-05 20:04:08,135 [INFO] cargar.models: Proveedor Construmart S A creado exitosamente.
+2025-04-05 20:04:08,138 [INFO] cargar.models: Proveedor EBEMA S A creado exitosamente.
+2025-04-05 20:04:08,141 [INFO] cargar.models: Proveedor ABASTECEDORA DEL COMERCIO LTDA creado exitosamente.
+2025-04-05 20:04:08,144 [INFO] cargar.models: Proveedor INDURA S.A. creado exitosamente.
+2025-04-05 20:04:08,147 [INFO] cargar.models: Proveedor QUIMICA PASSOL S A creado exitosamente.
+2025-04-05 20:04:08,151 [INFO] cargar.models: Proveedor LIZCAL S A creado exitosamente.
+2025-04-05 20:04:08,154 [INFO] cargar.models: Proveedor Comercial Uyustools Chile Ltda creado exitosamente.
+2025-04-05 20:04:08,157 [INFO] cargar.models: Proveedor Proveedores integrales del Norte S.A Prinorte creado exitosamente.
+2025-04-05 20:04:08,160 [INFO] cargar.models: Proveedor Industrial Supplier Spa. RAYTAN creado exitosamente.
+2025-04-05 20:04:08,163 [INFO] cargar.models: Proveedor Soc Comercial y Distr Tarapaca Ltda creado exitosamente.
+2025-04-05 20:04:08,165 [INFO] cargar.models: Proveedor CasNorte Ltda. creado exitosamente.
+2025-04-05 20:04:08,169 [INFO] cargar.models: Proveedor Ferretería Prat creado exitosamente.
+2025-04-05 20:04:08,172 [INFO] cargar.models: Proveedor Importadora Eurogom Ltda. creado exitosamente.
+2025-04-05 20:04:08,175 [ERROR] cargar.models: Error al insertar el proveedor Tecbolt S.A. Mamut: (1406, "Data too long for column 'telefono_vendedor' at row 1")
+2025-04-05 20:04:08,178 [INFO] cargar.models: Proveedor Dartel Antofagasta ltda creado exitosamente.
+2025-04-05 20:04:08,181 [INFO] cargar.models: Proveedor Henkel Chile Ltda - Agorex creado exitosamente.
+2025-04-05 20:04:08,184 [INFO] cargar.models: Proveedor IMPORTADORA NORGRAF SPA creado exitosamente.
+2025-04-05 20:04:08,188 [INFO] cargar.models: Proveedor ## Dap Ducasse Diseño Ltda creado exitosamente.
+2025-04-05 20:04:08,190 [ERROR] cargar.models: Error al insertar el proveedor Importadora y Expor Booniga Ltda: (1406, "Data too long for column 'telefono_vendedor' at row 1")
+2025-04-05 20:04:08,195 [INFO] cargar.models: Proveedor ## PRODUCTOS  AUTOADHESIVOS  FIXO S.A. creado exitosamente.
+2025-04-05 20:04:08,199 [INFO] cargar.models: Proveedor ODIS SPA creado exitosamente.
+2025-04-05 20:04:08,202 [INFO] cargar.models: Proveedor IMPORTOTAL SPA creado exitosamente.
+2025-04-05 20:04:08,206 [INFO] cargar.models: Proveedor IMPORTADORA Y EXPORTADORA JIN CHEN LIMITADA creado exitosamente.
+2025-04-05 20:04:08,209 [INFO] cargar.models: Proveedor Dartel S.A. creado exitosamente.
+2025-04-05 20:04:08,212 [INFO] cargar.models: Proveedor GUMERCINDO ENRIQUE LILLO CORTES creado exitosamente.
+2025-04-05 20:04:08,215 [INFO] cargar.models: Proveedor Impor y Expor G-Land Limitada creado exitosamente.
+2025-04-05 20:04:08,219 [INFO] cargar.models: Proveedor ELECTRICIDAD GOBANTES S.A. creado exitosamente.
+2025-04-05 20:04:08,222 [INFO] cargar.models: Proveedor CARLOS ENRIQUE GUAJARDO GALVEZ creado exitosamente.
+2025-04-05 20:04:08,226 [INFO] cargar.models: Proveedor Sociedad Ferretería Andino creado exitosamente.
+2025-04-05 20:04:08,229 [INFO] cargar.models: Proveedor SOCIEDAD DE TRANSPORTE DE CARGA Y LOGISTICA MERY Y RIOS SPA creado exitosamente.
+2025-04-05 20:04:08,232 [INFO] cargar.models: Proveedor ## FANALOZA SA creado exitosamente.
+2025-04-05 20:04:08,236 [INFO] cargar.models: Proveedor Rigoberto Carrasco Bidón creado exitosamente.
+2025-04-05 20:04:08,239 [INFO] cargar.models: Proveedor RHONA S A creado exitosamente.
+2025-04-05 20:04:08,242 [INFO] cargar.models: Proveedor HELA S A C I IMPORTADORA Y MANUFAC VON creado exitosamente.
+2025-04-05 20:04:08,245 [INFO] cargar.models: Proveedor Comercial Magi Spa exSebcor creado exitosamente.
+2025-04-05 20:04:08,249 [INFO] cargar.models: Proveedor DNA Electric SPA creado exitosamente.
+2025-04-05 20:04:08,252 [INFO] cargar.models: Proveedor COSMOPLAS S.A. creado exitosamente.
+2025-04-05 20:04:08,256 [INFO] cargar.models: Proveedor ## CASTILLO Y GUZMAN SPA creado exitosamente.
+2025-04-05 20:04:08,259 [INFO] django.server: "POST /upload-excel/ HTTP/1.1" 200 1968
+2025-04-05 20:04:12,174 [INFO] django.server: "GET / HTTP/1.1" 200 3935
+2025-04-05 20:04:13,371 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 44338
+2025-04-05 20:04:24,909 [INFO] django.server: "GET /proveedor/74/ HTTP/1.1" 200 4648
+2025-04-05 20:04:28,632 [INFO] django.server: "GET /update_proveedor/74/ HTTP/1.1" 200 6846
+2025-04-05 20:04:39,822 [INFO] django.server: "POST /update_proveedor/74/ HTTP/1.1" 200 6928
+2025-04-05 20:04:58,228 [INFO] django.server: "POST /update_proveedor/74/ HTTP/1.1" 200 6928
+2025-04-05 20:05:15,922 [INFO] django.server: "POST /update_proveedor/74/ HTTP/1.1" 302 0
+2025-04-05 20:05:15,932 [INFO] django.server: "GET /proveedor/74/ HTTP/1.1" 200 4961
+2025-04-05 20:05:19,968 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 44378
+2025-04-05 20:05:23,207 [INFO] django.server: "GET / HTTP/1.1" 200 3935
+2025-04-05 20:05:26,379 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 44378
+2025-04-05 20:05:28,908 [INFO] django.server: "GET / HTTP/1.1" 200 3935
+2025-04-05 20:05:29,895 [INFO] django.server: "GET /upload-excel/ HTTP/1.1" 200 2629
+2025-04-05 20:05:32,455 [INFO] django.server: "GET / HTTP/1.1" 200 3935
+2025-04-05 20:05:34,459 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 44378
+2025-04-05 20:05:52,153 [INFO] django.server: "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3736
+2025-04-05 20:05:52,164 [INFO] django.server: "GET /static/admin/css/login.css HTTP/1.1" 200 951
+2025-04-05 20:06:00,404 [INFO] django.server: "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3936
+2025-04-05 20:06:04,309 [INFO] django.server: "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+2025-04-05 20:06:04,319 [INFO] django.server: "GET /admin/ HTTP/1.1" 200 9784
+2025-04-05 20:07:12,816 [INFO] django.server: "GET / HTTP/1.1" 200 3985
+2025-04-05 20:07:14,537 [INFO] django.server: "GET /logout/ HTTP/1.1" 302 0
+2025-04-05 20:07:14,540 [INFO] django.server: "GET / HTTP/1.1" 200 2881
+2025-04-05 20:07:16,626 [INFO] django.server: "POST / HTTP/1.1" 302 0
+2025-04-05 20:07:16,633 [INFO] django.server: "GET / HTTP/1.1" 200 4241
+2025-04-05 20:07:30,136 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-04-05 20:07:32,842 [INFO] django.server: "GET /logout/ HTTP/1.1" 302 0
+2025-04-05 20:07:32,850 [INFO] django.server: "GET / HTTP/1.1" 200 2881
+2025-04-05 20:07:34,963 [INFO] django.server: "GET / HTTP/1.1" 200 2626
+2025-04-05 20:07:36,934 [INFO] django.server: "POST / HTTP/1.1" 302 0
+2025-04-05 20:07:36,941 [INFO] django.server: "GET / HTTP/1.1" 200 4241
+2025-04-05 20:08:07,318 [INFO] django.server: "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+2025-04-05 20:08:07,347 [INFO] django.server: "GET /admin/ HTTP/1.1" 200 9784
+2025-04-05 20:08:11,429 [INFO] django.server: "GET /admin/auth/user/1/change/ HTTP/1.1" 200 24085
+2025-04-05 20:08:11,450 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-05 20:09:06,722 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-04-05 20:09:12,124 [INFO] django.server: "POST /admin/logout/ HTTP/1.1" 200 3604
+2025-04-05 20:09:16,103 [INFO] django.server: "GET / HTTP/1.1" 200 2626
+2025-04-05 20:09:18,057 [INFO] django.server: "POST / HTTP/1.1" 302 0
+2025-04-05 20:09:18,065 [INFO] django.server: "GET / HTTP/1.1" 200 4396
+2025-04-05 20:09:20,113 [INFO] django.server: "GET /register/ HTTP/1.1" 200 4771
+2025-04-05 20:09:23,356 [INFO] django.server: "GET / HTTP/1.1" 200 4140
+2025-04-05 20:09:27,106 [INFO] django.server: "GET /register/ HTTP/1.1" 200 4771
+2025-04-05 20:09:37,171 [INFO] django.server: "GET /logout/ HTTP/1.1" 302 0
+2025-04-05 20:09:37,174 [INFO] django.server: "GET / HTTP/1.1" 200 2881
