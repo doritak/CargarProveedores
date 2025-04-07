@@ -1,0 +1,18 @@
+2025-04-06 14:49:42,138 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-04-06 14:49:46,264 [INFO] django.server: "GET / HTTP/1.1" 200 2626
+2025-04-06 14:49:46,469 [WARNING] django.request: Not Found: /favicon.ico
+2025-04-06 14:49:46,470 [WARNING] django.server: "GET /favicon.ico HTTP/1.1" 404 4627
+2025-04-06 14:49:48,945 [INFO] django.server: "POST / HTTP/1.1" 302 0
+2025-04-06 14:49:48,960 [INFO] django.server: "GET / HTTP/1.1" 200 4396
+2025-04-06 14:49:51,406 [INFO] django.server: "GET / HTTP/1.1" 200 4140
+2025-04-06 14:49:57,495 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 44583
+2025-04-06 14:50:10,677 [INFO] django.server: "GET /proveedor/15/ HTTP/1.1" 200 4947
+2025-04-06 14:50:13,812 [INFO] django.server: "GET /update_proveedor/15/ HTTP/1.1" 200 7161
+2025-04-06 14:50:25,501 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 44583
+2025-04-06 14:50:32,589 [INFO] django.server: "GET / HTTP/1.1" 200 4140
+2025-04-06 14:58:25,620 [INFO] django.server: "GET /upload-excel/ HTTP/1.1" 200 2834
+2025-04-06 14:58:29,147 [INFO] django.server: "GET / HTTP/1.1" 200 4140
+2025-04-06 14:58:34,338 [INFO] django.server: "GET /register/ HTTP/1.1" 200 4771
+2025-04-06 15:57:41,134 [INFO] django.server: "GET / HTTP/1.1" 200 4140
+2025-04-06 15:57:42,505 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 44583
+2025-04-06 15:57:47,329 [INFO] django.server: "GET /add_proveedor/ HTTP/1.1" 200 5429

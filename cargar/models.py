@@ -74,8 +74,8 @@ class Proveedor(models.Model):
     correo_vendedor = models.CharField(max_length=100)
     correo_vendedor2 = models.CharField(max_length=100)
     correo_pago = models.CharField(max_length=100)
-    tipo_flete = models.ForeignKey(TipoFlete, on_delete=models.CASCADE)
-    transporte = models.ForeignKey(Transporte, on_delete=models.CASCADE)
+    tipo_flete = models.ForeignKey(TipoFlete, on_delete=models.SET_NULL, null=True, blank=True)
+    transporte = models.ForeignKey(Transporte, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return f"{self.nombre_proveedor}"
