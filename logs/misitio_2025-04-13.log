@@ -1,0 +1,308 @@
+2025-04-13 16:53:01,379 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-04-13 16:54:08,175 [INFO] django.server: "GET / HTTP/1.1" 200 2626
+2025-04-13 16:54:08,208 [INFO] django.server: "GET /static/cargar/css/style.css HTTP/1.1" 200 3093
+2025-04-13 16:54:08,211 [INFO] django.server: "GET /static/cargar/js/alerts.js HTTP/1.1" 200 3100
+2025-04-13 16:54:09,496 [WARNING] django.request: Not Found: /favicon.ico
+2025-04-13 16:54:09,496 [WARNING] django.server: "GET /favicon.ico HTTP/1.1" 404 4627
+2025-04-13 16:54:18,726 [ERROR] django.request: Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "auth_user" does not exist
+LINE 1: ...user"."is_active", "auth_user"."date_joined" FROM "auth_user...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/cargar/views.py", line 22, in index
+    user = authenticate(request, username=username, password=password)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/decorators/debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/auth/__init__.py", line 114, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/auth/backends.py", line 65, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/auth/base_user.py", line 37, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 629, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 366, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1935, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1622, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "auth_user" does not exist
+LINE 1: ...user"."is_active", "auth_user"."date_joined" FROM "auth_user...
+                                                             ^
+
+2025-04-13 16:54:18,729 [ERROR] django.server: "POST / HTTP/1.1" 500 144540
+2025-04-13 16:58:15,567 [INFO] django.server: "POST / HTTP/1.1" 302 0
+2025-04-13 16:58:15,572 [INFO] django.server: "GET / HTTP/1.1" 200 2870
+2025-04-13 16:58:26,319 [INFO] django.server: "POST / HTTP/1.1" 302 0
+2025-04-13 16:58:26,333 [INFO] django.server: "GET / HTTP/1.1" 200 4191
+2025-04-13 16:58:28,865 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 3626
+2025-04-13 16:58:32,920 [INFO] django.server: "GET /upload-excel/ HTTP/1.1" 200 2629
+2025-04-13 16:58:52,040 [INFO] cargar.models: Transporte 'Propio Del Proveedor' creado.
+2025-04-13 16:58:52,042 [INFO] cargar.models: Transporte 'Propio Fsc' creado.
+2025-04-13 16:58:52,044 [INFO] cargar.models: Transporte 'Pullmanbus' creado.
+2025-04-13 16:58:52,046 [INFO] cargar.models: Transporte 'Samex' creado.
+2025-04-13 16:58:52,047 [INFO] cargar.models: Transporte 'Transp. Medalla' creado.
+2025-04-13 16:58:52,049 [INFO] cargar.models: Transporte 'Transp.Alamo' creado.
+2025-04-13 16:58:52,050 [INFO] cargar.models: Transporte 'Transp.Gyg' creado.
+2025-04-13 16:58:52,056 [INFO] django.server: "POST /upload-excel/ HTTP/1.1" 200 1969
+2025-04-13 16:58:53,211 [INFO] django.server: "GET /upload-excel/ HTTP/1.1" 200 2629
+2025-04-13 16:59:06,206 [INFO] cargar.models: TipoFlete 'Antof. ir a buscar' creado.
+2025-04-13 16:59:06,208 [INFO] cargar.models: TipoFlete 'Antof. lo despachan' creado.
+2025-04-13 16:59:06,210 [INFO] cargar.models: TipoFlete 'Iqq pagar flete' creado.
+2025-04-13 16:59:06,211 [INFO] cargar.models: TipoFlete 'No aplica' creado.
+2025-04-13 16:59:06,213 [INFO] cargar.models: TipoFlete 'Stgo. flete incluído' creado.
+2025-04-13 16:59:06,215 [INFO] cargar.models: TipoFlete 'Stgo. pagar flete' creado.
+2025-04-13 16:59:06,219 [INFO] django.server: "POST /upload-excel/ HTTP/1.1" 200 1964
+2025-04-13 16:59:07,300 [INFO] django.server: "GET /upload-excel/ HTTP/1.1" 200 2629
+2025-04-13 16:59:15,220 [INFO] cargar.models: Proveedor CHRISTENSEN COMERCIAL S A creado exitosamente.
+2025-04-13 16:59:15,223 [ERROR] cargar.models: Error al insertar el proveedor CODELPA CHILE S A - Ceresita: value too long for type character varying(20)
+
+2025-04-13 16:59:15,227 [ERROR] cargar.models: Error al insertar el proveedor Com e Ind Plasticos Hoffens S A: value too long for type character varying(20)
+
+2025-04-13 16:59:15,230 [INFO] cargar.models: Proveedor ARAGON S A creado exitosamente.
+2025-04-13 16:59:15,234 [INFO] cargar.models: Proveedor Comercial Tornagaleon Ltda creado exitosamente.
+2025-04-13 16:59:15,238 [INFO] cargar.models: Proveedor CONFORMADORA DE METALES LTDA - Conmetal creado exitosamente.
+2025-04-13 16:59:15,242 [INFO] cargar.models: Proveedor DE VICENTE PLASTICOS S A creado exitosamente.
+2025-04-13 16:59:15,246 [INFO] cargar.models: Proveedor Distribuidora Plasticom Ltda creado exitosamente.
+2025-04-13 16:59:15,250 [INFO] cargar.models: Proveedor FORMAC SA creado exitosamente.
+2025-04-13 16:59:15,254 [INFO] cargar.models: Proveedor Graf Industrial y Comercial Ltda creado exitosamente.
+2025-04-13 16:59:15,258 [INFO] cargar.models: Proveedor HECTOR ALIRO GALLARDO GALLARDO creado exitosamente.
+2025-04-13 16:59:15,262 [INFO] cargar.models: Proveedor HERRERA Y HERRERA LIMITADA creado exitosamente.
+2025-04-13 16:59:15,265 [INFO] cargar.models: Proveedor Igma Antofagasta Spa creado exitosamente.
+2025-04-13 16:59:15,269 [INFO] cargar.models: Proveedor IMPORTADORA AGROFOR S A creado exitosamente.
+2025-04-13 16:59:15,273 [INFO] cargar.models: Proveedor IMPORTADORA DE MAQUINARIAS VALPARAISO LTDA creado exitosamente.
+2025-04-13 16:59:15,277 [INFO] cargar.models: Proveedor Importadora ECOSA creado exitosamente.
+2025-04-13 16:59:15,281 [INFO] cargar.models: Proveedor IMPORTADORA IVAN ARAYA E HIJOS LTDA. creado exitosamente.
+2025-04-13 16:59:15,284 [INFO] cargar.models: Proveedor LILIANA NOVOA CAYO creado exitosamente.
+2025-04-13 16:59:15,288 [INFO] cargar.models: Proveedor COMERCIALIZADORA SEBCOR LIMITADA creado exitosamente.
+2025-04-13 16:59:15,292 [INFO] cargar.models: Proveedor PINTURAS MARBELLA SPA creado exitosamente.
+2025-04-13 16:59:15,296 [INFO] cargar.models: Proveedor Marienberg y Cía. en Comandita creado exitosamente.
+2025-04-13 16:59:15,300 [INFO] cargar.models: Proveedor METALURGICA LINO HENRIQUEZ S A creado exitosamente.
+2025-04-13 16:59:15,304 [INFO] cargar.models: Proveedor Miguel Canale y Cia Ltda creado exitosamente.
+2025-04-13 16:59:15,308 [INFO] cargar.models: Proveedor Mosaico S A creado exitosamente.
+2025-04-13 16:59:15,311 [INFO] cargar.models: Proveedor Nelson Mora Ortiz EIRL creado exitosamente.
+2025-04-13 16:59:15,315 [INFO] cargar.models: Proveedor PARETI Y COMPANIA LTDA creado exitosamente.
+2025-04-13 16:59:15,319 [INFO] cargar.models: Proveedor PAREX CHILE LTDA - CADINA creado exitosamente.
+2025-04-13 16:59:15,322 [INFO] cargar.models: Proveedor PATRICIO LIOI Y CIA LTDA creado exitosamente.
+2025-04-13 16:59:15,326 [INFO] cargar.models: Proveedor PATRICIO OTERO F Y CIA LTDA creado exitosamente.
+2025-04-13 16:59:15,329 [INFO] cargar.models: Proveedor Pernoval S A creado exitosamente.
+2025-04-13 16:59:15,334 [INFO] cargar.models: Proveedor Petroflex S A creado exitosamente.
+2025-04-13 16:59:15,337 [INFO] cargar.models: Proveedor PINTURAS TRICOLOR S A creado exitosamente.
+2025-04-13 16:59:15,341 [INFO] cargar.models: Proveedor PRODALAM S A creado exitosamente.
+2025-04-13 16:59:15,345 [INFO] cargar.models: Proveedor QUIMICA UNIVERSAL LTDA creado exitosamente.
+2025-04-13 16:59:15,349 [INFO] cargar.models: Proveedor Rema Comercial e Industrial Ltda creado exitosamente.
+2025-04-13 16:59:15,352 [INFO] cargar.models: Proveedor RICARDO ALARCON VALENZUELA  EIRL creado exitosamente.
+2025-04-13 16:59:15,357 [INFO] cargar.models: Proveedor BOX SOLUTION LTDA creado exitosamente.
+2025-04-13 16:59:15,362 [INFO] cargar.models: Proveedor SALOMON SACK SA creado exitosamente.
+2025-04-13 16:59:15,365 [ERROR] cargar.models: Error al insertar el proveedor SANDE S A: value too long for type character varying(20)
+
+2025-04-13 16:59:15,369 [INFO] cargar.models: Proveedor SCHUMY RODRIGUEZ LTDA creado exitosamente.
+2025-04-13 16:59:15,373 [INFO] cargar.models: Proveedor EXTINTORES OMEGA SPA creado exitosamente.
+2025-04-13 16:59:15,376 [ERROR] cargar.models: Error al insertar el proveedor SODIMAC S A: value too long for type character varying(20)
+
+2025-04-13 16:59:15,380 [INFO] cargar.models: Proveedor SOUDAL S A creado exitosamente.
+2025-04-13 16:59:15,384 [INFO] cargar.models: Proveedor TEOLINDA DEL CARMEN ARANCIBIA CASTRO creado exitosamente.
+2025-04-13 16:59:15,387 [INFO] cargar.models: Proveedor Transporte GyG Ltda creado exitosamente.
+2025-04-13 16:59:15,390 [ERROR] cargar.models: Error al insertar el proveedor VECTOR S A: value too long for type character varying(20)
+
+2025-04-13 16:59:15,395 [INFO] cargar.models: Proveedor VERSACHEM CHILE S A creado exitosamente.
+2025-04-13 16:59:15,398 [INFO] cargar.models: Proveedor Wurth Chile Ltda. creado exitosamente.
+2025-04-13 16:59:15,402 [INFO] cargar.models: Proveedor LORENA ANDRADE MANSILLA TRANSPORTES EIRL creado exitosamente.
+2025-04-13 16:59:15,406 [INFO] cargar.models: Proveedor EUROMOB IMP DISTR Y COMER LTDA creado exitosamente.
+2025-04-13 16:59:15,410 [INFO] cargar.models: Proveedor Claudia Machuca Cereceda creado exitosamente.
+2025-04-13 16:59:15,413 [INFO] cargar.models: Proveedor Construmart S A creado exitosamente.
+2025-04-13 16:59:15,416 [INFO] cargar.models: Proveedor EBEMA S A creado exitosamente.
+2025-04-13 16:59:15,420 [INFO] cargar.models: Proveedor ABASTECEDORA DEL COMERCIO LTDA creado exitosamente.
+2025-04-13 16:59:15,424 [INFO] cargar.models: Proveedor INDURA S.A. creado exitosamente.
+2025-04-13 16:59:15,428 [INFO] cargar.models: Proveedor QUIMICA PASSOL S A creado exitosamente.
+2025-04-13 16:59:15,431 [INFO] cargar.models: Proveedor LIZCAL S A creado exitosamente.
+2025-04-13 16:59:15,435 [INFO] cargar.models: Proveedor Comercial Uyustools Chile Ltda creado exitosamente.
+2025-04-13 16:59:15,439 [INFO] cargar.models: Proveedor Proveedores integrales del Norte S.A Prinorte creado exitosamente.
+2025-04-13 16:59:15,442 [INFO] cargar.models: Proveedor Industrial Supplier Spa. RAYTAN creado exitosamente.
+2025-04-13 16:59:15,446 [INFO] cargar.models: Proveedor Soc Comercial y Distr Tarapaca Ltda creado exitosamente.
+2025-04-13 16:59:15,449 [INFO] cargar.models: Proveedor CasNorte Ltda. creado exitosamente.
+2025-04-13 16:59:15,453 [INFO] cargar.models: Proveedor Ferretería Prat creado exitosamente.
+2025-04-13 16:59:15,457 [INFO] cargar.models: Proveedor Importadora Eurogom Ltda. creado exitosamente.
+2025-04-13 16:59:15,460 [ERROR] cargar.models: Error al insertar el proveedor Tecbolt S.A. Mamut: value too long for type character varying(20)
+
+2025-04-13 16:59:15,464 [INFO] cargar.models: Proveedor Dartel Antofagasta ltda creado exitosamente.
+2025-04-13 16:59:15,469 [INFO] cargar.models: Proveedor Henkel Chile Ltda - Agorex creado exitosamente.
+2025-04-13 16:59:15,473 [INFO] cargar.models: Proveedor IMPORTADORA NORGRAF SPA creado exitosamente.
+2025-04-13 16:59:15,476 [INFO] cargar.models: Proveedor ## Dap Ducasse Diseño Ltda creado exitosamente.
+2025-04-13 16:59:15,480 [ERROR] cargar.models: Error al insertar el proveedor Importadora y Expor Booniga Ltda: value too long for type character varying(20)
+
+2025-04-13 16:59:15,484 [INFO] cargar.models: Proveedor ## PRODUCTOS  AUTOADHESIVOS  FIXO S.A. creado exitosamente.
+2025-04-13 16:59:15,488 [INFO] cargar.models: Proveedor ODIS SPA creado exitosamente.
+2025-04-13 16:59:15,492 [INFO] cargar.models: Proveedor IMPORTOTAL SPA creado exitosamente.
+2025-04-13 16:59:15,496 [INFO] cargar.models: Proveedor IMPORTADORA Y EXPORTADORA JIN CHEN LIMITADA creado exitosamente.
+2025-04-13 16:59:15,500 [INFO] cargar.models: Proveedor Dartel S.A. creado exitosamente.
+2025-04-13 16:59:15,503 [INFO] cargar.models: Proveedor GUMERCINDO ENRIQUE LILLO CORTES creado exitosamente.
+2025-04-13 16:59:15,507 [INFO] cargar.models: Proveedor Impor y Expor G-Land Limitada creado exitosamente.
+2025-04-13 16:59:15,511 [INFO] cargar.models: Proveedor ELECTRICIDAD GOBANTES S.A. creado exitosamente.
+2025-04-13 16:59:15,514 [INFO] cargar.models: Proveedor CARLOS ENRIQUE GUAJARDO GALVEZ creado exitosamente.
+2025-04-13 16:59:15,518 [INFO] cargar.models: Proveedor Sociedad Ferretería Andino creado exitosamente.
+2025-04-13 16:59:15,522 [INFO] cargar.models: Proveedor SOCIEDAD DE TRANSPORTE DE CARGA Y LOGISTICA MERY Y RIOS SPA creado exitosamente.
+2025-04-13 16:59:15,526 [INFO] cargar.models: Proveedor ## FANALOZA SA creado exitosamente.
+2025-04-13 16:59:15,529 [INFO] cargar.models: Proveedor Rigoberto Carrasco Bidón creado exitosamente.
+2025-04-13 16:59:15,533 [INFO] cargar.models: Proveedor RHONA S A creado exitosamente.
+2025-04-13 16:59:15,536 [INFO] cargar.models: Proveedor HELA S A C I IMPORTADORA Y MANUFAC VON creado exitosamente.
+2025-04-13 16:59:15,540 [INFO] cargar.models: Proveedor Comercial Magi Spa exSebcor creado exitosamente.
+2025-04-13 16:59:15,544 [INFO] cargar.models: Proveedor DNA Electric SPA creado exitosamente.
+2025-04-13 16:59:15,547 [INFO] cargar.models: Proveedor COSMOPLAS S.A. creado exitosamente.
+2025-04-13 16:59:15,550 [INFO] cargar.models: Proveedor ## CASTILLO Y GUZMAN SPA creado exitosamente.
+2025-04-13 16:59:15,556 [INFO] django.server: "POST /upload-excel/ HTTP/1.1" 200 1968
+2025-04-13 16:59:17,930 [INFO] django.server: "GET / HTTP/1.1" 200 3935
+2025-04-13 16:59:18,986 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 44338
+2025-04-13 16:59:31,564 [INFO] django.server: "GET /proveedor/67/ HTTP/1.1" 200 4641
+2025-04-13 16:59:44,812 [INFO] django.server: "GET / HTTP/1.1" 200 3935
+2025-04-13 16:59:47,216 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 44338
+2025-04-13 16:59:49,245 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 44338
+2025-04-13 16:59:51,130 [INFO] django.server: "GET / HTTP/1.1" 200 3935
+2025-04-13 16:59:51,822 [INFO] django.server: "GET / HTTP/1.1" 200 3935
+2025-04-13 16:59:52,078 [INFO] django.server: "GET / HTTP/1.1" 200 3935
+2025-04-13 16:59:52,452 [INFO] django.server: "GET / HTTP/1.1" 200 3935
+2025-04-13 17:13:30,269 [INFO] django.server: "GET /admin HTTP/1.1" 301 0
+2025-04-13 17:13:30,312 [INFO] django.server: "GET /admin/ HTTP/1.1" 200 8511
+2025-04-13 17:13:30,325 [INFO] django.server: "GET /static/admin/css/base.css HTTP/1.1" 200 22154
+2025-04-13 17:13:30,336 [INFO] django.server: "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+2025-04-13 17:13:30,337 [INFO] django.server: "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+2025-04-13 17:13:30,338 [INFO] django.server: "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+2025-04-13 17:13:30,339 [INFO] django.server: "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+2025-04-13 17:13:30,340 [INFO] django.server: "GET /static/admin/css/responsive.css HTTP/1.1" 200 16632
+2025-04-13 17:13:30,344 [INFO] django.server: "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+2025-04-13 17:13:30,349 [INFO] django.server: "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+2025-04-13 17:13:30,349 [INFO] django.server: "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+2025-04-13 17:13:34,604 [INFO] django.server: "GET /admin/auth/group/ HTTP/1.1" 200 9579
+2025-04-13 17:13:34,616 [INFO] django.server: "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+2025-04-13 17:13:34,627 [INFO] django.server: "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+2025-04-13 17:13:34,630 [INFO] django.server: "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+2025-04-13 17:13:34,630 [INFO] django.server: "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+2025-04-13 17:13:34,631 [INFO] django.server: "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+2025-04-13 17:13:34,636 [INFO] django.server: "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+2025-04-13 17:13:34,637 [INFO] django.server: "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+2025-04-13 17:13:34,642 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-13 17:13:34,647 [INFO] django.server: "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+2025-04-13 17:13:34,655 [INFO] django.server: "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+2025-04-13 17:13:34,658 [INFO] django.server: "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+2025-04-13 17:13:34,664 [INFO] django.server: "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+2025-04-13 17:13:34,674 [INFO] django.server: "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+2025-04-13 17:13:45,575 [INFO] django.server: "GET /admin/auth/group/add/ HTTP/1.1" 200 14242
+2025-04-13 17:13:45,591 [INFO] django.server: "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+2025-04-13 17:13:45,592 [INFO] django.server: "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15709
+2025-04-13 17:13:45,592 [INFO] django.server: "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+2025-04-13 17:13:45,593 [INFO] django.server: "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+2025-04-13 17:13:45,599 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-13 17:13:45,602 [INFO] django.server: "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+2025-04-13 17:13:45,647 [INFO] django.server: "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+2025-04-13 17:13:45,714 [INFO] django.server: "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+2025-04-13 17:20:21,928 [INFO] django.server: "POST /admin/auth/group/add/ HTTP/1.1" 302 0
+2025-04-13 17:20:21,952 [INFO] django.server: "GET /admin/auth/group/add/ HTTP/1.1" 200 14486
+2025-04-13 17:20:21,964 [INFO] django.server: "GET /static/admin/css/base.css HTTP/1.1" 304 0
+2025-04-13 17:20:21,972 [INFO] django.server: "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+2025-04-13 17:20:21,973 [INFO] django.server: "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+2025-04-13 17:20:21,978 [INFO] django.server: "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+2025-04-13 17:20:21,978 [INFO] django.server: "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+2025-04-13 17:20:21,979 [INFO] django.server: "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+2025-04-13 17:20:21,979 [INFO] django.server: "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+2025-04-13 17:20:21,981 [INFO] django.server: "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+2025-04-13 17:20:21,982 [INFO] django.server: "GET /static/admin/js/core.js HTTP/1.1" 304 0
+2025-04-13 17:20:21,987 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-13 17:20:21,990 [INFO] django.server: "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+2025-04-13 17:20:22,015 [INFO] django.server: "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+2025-04-13 17:20:22,027 [INFO] django.server: "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+2025-04-13 17:20:22,027 [INFO] django.server: "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+2025-04-13 17:20:22,028 [INFO] django.server: "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+2025-04-13 17:20:22,028 [INFO] django.server: "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+2025-04-13 17:20:22,035 [INFO] django.server: "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+2025-04-13 17:20:22,066 [INFO] django.server: "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+2025-04-13 17:20:22,076 [INFO] django.server: "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+2025-04-13 17:20:22,115 [INFO] django.server: "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+2025-04-13 17:20:22,118 [INFO] django.server: "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+2025-04-13 17:20:22,120 [INFO] django.server: "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+2025-04-13 17:20:22,217 [INFO] django.server: "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+2025-04-13 17:20:22,217 [INFO] django.server: "GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
+2025-04-13 17:20:38,156 [INFO] django.server: "POST /admin/auth/group/add/ HTTP/1.1" 302 0
+2025-04-13 17:20:38,179 [INFO] django.server: "GET /admin/auth/group/ HTTP/1.1" 200 11375
+2025-04-13 17:20:38,192 [INFO] django.server: "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+2025-04-13 17:20:38,200 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-13 17:20:38,204 [INFO] django.server: "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+2025-04-13 17:20:41,567 [INFO] django.server: "GET /admin/auth/group/2/change/ HTTP/1.1" 200 14461
+2025-04-13 17:20:41,587 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-13 17:21:06,408 [INFO] django.server: "POST /admin/auth/group/2/change/ HTTP/1.1" 302 0
+2025-04-13 17:21:06,428 [INFO] django.server: "GET /admin/auth/group/ HTTP/1.1" 200 11373
+2025-04-13 17:21:06,449 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-13 17:21:47,351 [INFO] django.server: "GET /admin/auth/user/ HTTP/1.1" 200 13644
+2025-04-13 17:21:47,372 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-13 17:21:47,383 [INFO] django.server: "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+2025-04-13 17:21:47,384 [INFO] django.server: "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+2025-04-13 17:21:50,343 [INFO] django.server: "GET /admin/auth/user/1/change/ HTTP/1.1" 200 24574
+2025-04-13 17:21:50,357 [INFO] django.server: "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+2025-04-13 17:21:50,357 [INFO] django.server: "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+2025-04-13 17:21:50,361 [INFO] django.server: "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+2025-04-13 17:21:50,364 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-13 17:21:50,429 [INFO] django.server: "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+2025-04-13 17:21:50,429 [INFO] django.server: "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+2025-04-13 17:22:02,382 [INFO] django.server: "POST /admin/auth/user/1/change/ HTTP/1.1" 302 0
+2025-04-13 17:22:02,403 [INFO] django.server: "GET /admin/auth/user/ HTTP/1.1" 200 13840
+2025-04-13 17:22:02,425 [INFO] django.server: "GET /admin/jsi18n/ HTTP/1.1" 200 8691
+2025-04-13 17:22:09,858 [INFO] django.server: "GET / HTTP/1.1" 200 4142
+2025-04-13 17:22:14,044 [INFO] django.server: "GET /register/ HTTP/1.1" 200 4773
+2025-04-13 17:23:14,437 [INFO] django.server: "POST /register/ HTTP/1.1" 200 5922
+2025-04-13 17:23:47,071 [INFO] django.server: "POST /register/ HTTP/1.1" 200 2873
+2025-04-13 17:23:56,624 [INFO] django.server: "POST / HTTP/1.1" 302 0
+2025-04-13 17:23:56,639 [INFO] django.server: "GET / HTTP/1.1" 200 4243
+2025-04-13 17:24:02,266 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 44390
+2025-04-13 17:24:52,495 [INFO] django.server: "GET /proveedor/61/ HTTP/1.1" 200 4808
+2025-04-13 17:27:45,826 [INFO] django.server: "GET /update_proveedor/61/ HTTP/1.1" 200 6997
+2025-04-13 17:29:35,652 [INFO] django.server: "POST /update_proveedor/61/ HTTP/1.1" 302 0
+2025-04-13 17:29:35,672 [INFO] django.server: "GET /proveedor/61/ HTTP/1.1" 200 5057
+2025-04-13 17:29:39,484 [INFO] django.server: "GET /logout/ HTTP/1.1" 302 0
+2025-04-13 17:29:39,488 [INFO] django.server: "GET / HTTP/1.1" 200 2881
+2025-04-13 17:29:46,942 [INFO] django.server: "POST / HTTP/1.1" 302 0
+2025-04-13 17:29:46,958 [INFO] django.server: "GET / HTTP/1.1" 200 4398
+2025-04-13 17:29:54,635 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 44541

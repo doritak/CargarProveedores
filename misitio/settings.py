@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
+from decouple import config
 from pathlib import Path
 import logging
 from datetime import datetime
@@ -85,12 +86,12 @@ WSGI_APPLICATION = 'misitio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ferreteria',
-        'USER': 'root',
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME'), # nombre de la base de datos
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST', default='127.0.0.1'),
+        'PORT': config('DB_PORT', default='5432'),  # puerto por defecto de PostgreSQL
     }
 }
 

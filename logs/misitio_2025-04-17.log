@@ -1,0 +1,23 @@
+2025-04-17 17:24:53,648 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-04-17 17:24:59,283 [INFO] django.server: "GET / HTTP/1.1" 200 4142
+2025-04-17 17:24:59,336 [INFO] django.server: "GET /static/cargar/css/style.css HTTP/1.1" 200 3093
+2025-04-17 17:24:59,337 [INFO] django.server: "GET /static/cargar/js/alerts.js HTTP/1.1" 200 3100
+2025-04-17 17:25:06,514 [WARNING] django.request: Not Found: /favicon.ico
+2025-04-17 17:25:06,516 [WARNING] django.server: "GET /favicon.ico HTTP/1.1" 404 4627
+2025-04-17 17:25:11,507 [INFO] django.server: "GET /register/ HTTP/1.1" 200 4773
+2025-04-17 17:25:14,468 [INFO] django.server: "GET / HTTP/1.1" 200 4142
+2025-04-17 17:25:18,158 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 44541
+2025-04-17 17:25:24,280 [INFO] django.server: "GET /proveedor/44/ HTTP/1.1" 200 4865
+2025-04-17 17:25:27,012 [INFO] django.server: "GET /update_proveedor/44/ HTTP/1.1" 200 7080
+2025-04-17 17:25:55,730 [INFO] django.server: "POST /update_proveedor/44/ HTTP/1.1" 200 7427
+2025-04-17 17:25:58,812 [INFO] django.server: "GET / HTTP/1.1" 200 4142
+2025-04-17 17:25:59,563 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 44541
+2025-04-17 17:26:06,859 [INFO] django.server: "GET /proveedor/67/ HTTP/1.1" 200 4848
+2025-04-17 17:26:11,279 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 44541
+2025-04-17 17:26:13,679 [INFO] django.server: "GET /add_proveedor/ HTTP/1.1" 200 5431
+2025-04-17 17:26:32,023 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 44541
+2025-04-17 17:26:35,459 [INFO] django.server: "GET / HTTP/1.1" 200 4142
+2025-04-17 17:26:36,658 [INFO] django.server: "GET /upload-excel/ HTTP/1.1" 200 2836
+2025-04-17 17:41:03,639 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2025-04-17 17:41:09,596 [INFO] django.server: "GET / HTTP/1.1" 200 4142
+2025-04-17 17:41:12,690 [INFO] django.server: "GET /proveedores/ HTTP/1.1" 200 44541
